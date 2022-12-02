@@ -46,6 +46,11 @@
 1) Открыл проект и подключил библиотеки мл агента.
 ![2](https://user-images.githubusercontent.com/95544542/205360591-fcf79de5-a0ca-49c3-ba4a-ffba255b1af4.PNG)
 
+После запуска проекта, Anaconda выдала ссылку на графики, вот так они выглядят при открытии.
+
+![1](https://user-images.githubusercontent.com/95544542/205364382-7b056ae0-e396-4a9e-89b9-f33de61531e3.PNG)
+
+
 
 2) Добавил Economic.yaml в папку с проектом, а так же подключил и установил пакеты. Содержимое данного файло оставлю ниже + Скриншоты:
 
@@ -84,50 +89,25 @@ behaviors:
 ![1](https://user-images.githubusercontent.com/95544542/205360721-aee6145a-d4a8-4deb-97b4-8502e918fe07.PNG)
 
 
-3) Активировал виртуальное пространство и запустил обучение.
+Поменяем некоторые значения в файле Economic и посмотрим как будут меняться графики.
 
-![image](https://user-images.githubusercontent.com/100460661/204885863-0ae2ea78-fcf6-4d05-8a17-88203491c584.png)
+- Поменяем значение num_epoch и вместо 3 поставим 8
 
-4) По завершении обучения файлы сохранились.
+![4](https://user-images.githubusercontent.com/95544542/205363674-e9adc596-1a41-4aa3-ace9-ab4655fc1901.png)
 
-![image](https://user-images.githubusercontent.com/100460661/204887208-84cc500f-c7b6-4031-855b-2f4fe065bed6.png)
+ значение num_epoch показывает количество проходов через буфер опыта
 
-5) Установил TensorBoard. Появились следующие графики:
+- Поменяем значение batch_size с 1024 на 784
 
-![image](https://user-images.githubusercontent.com/100460661/204898423-7c906192-58d7-4afa-8c8a-bf4d005f6ced.png)
+![3](https://user-images.githubusercontent.com/95544542/205363898-f0d18da5-499f-4ae0-ac50-6681b6e70400.png)
 
-Далее буду изменять 5 раз какие-либо параметры файла Economic.yaml. Задача - добиться максимальной монотонности и линейности графика Cumulative Reward.
+Значение batch_size отвечает за количество опытов в каждой итерации градиентного спуска.
 
-6) Изменил batch_size с 1024 на 2100. Прогнал все пункты заново.
+- Поменяем значение epsilon с 0.2 на 0.3.
 
-![image](https://user-images.githubusercontent.com/100460661/204902981-ed6800f5-8e39-4c7d-8904-49d503508ea4.png)
+![2](https://user-images.githubusercontent.com/95544542/205364133-cca44614-e00d-444e-97cd-1ed4512d06c7.PNG)
 
-График стал всегда равен 1.
-
-7) Изменил batch_size с 1024 на 300. Прогнал все пункты заново.
-
-![image](https://user-images.githubusercontent.com/100460661/204906752-666444b0-c8c9-4fe1-82b0-0fdc9dbef739.png)
-
-График стал более кривым.
-
-8) Вернул  batch_size 1024, изменил lambd с 0.95 на 0.9
-
-![image](https://user-images.githubusercontent.com/100460661/204908823-3dc96edc-ef01-4e25-9510-2ad3272d8cf2.png)
-
-график стал более линеен.
-
-9) Оставил lambd 0.9 и изменил epsilon с 0.2 на 0.1
-
-![image](https://user-images.githubusercontent.com/100460661/204910295-b7822e91-12c7-4527-b0d4-1f1cbd3fcb0c.png)
-
-Практически нет изменений.
-
-10) Изменил num_epoch с 3 на 1
-
-![image](https://user-images.githubusercontent.com/100460661/204911579-0b373ba2-c0b5-46d4-99e7-7df73578100e.png)
-
-Практически нет изменений.
-
+Значение epsilon используется для расчёта скорости развития политики в процессе обучения.
 
 ## Задание 2
 ### Опишите результаты, выведенные в TensorBoard.
