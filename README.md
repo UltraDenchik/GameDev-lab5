@@ -44,9 +44,10 @@
 ### Измените параметры файла. yaml-агента и определить какие параметры и как влияют на обучение модели.
 
 1) Открыл проект и подключил библиотеки мл агента.
-![image](https://user-images.githubusercontent.com/100460661/204876835-50c9766b-9229-4b51-9b2e-9ab4f8e26e68.png)
+![2](https://user-images.githubusercontent.com/95544542/205360591-fcf79de5-a0ca-49c3-ba4a-ffba255b1af4.PNG)
 
-2) Добавил Economic.yaml в папку с проектом. Содержимое файла Economic.yaml:
+
+2) Добавил Economic.yaml в папку с проектом, а так же подключил и установил пакеты. Содержимое данного файло оставлю ниже + Скриншоты:
 
 ```yaml
 behaviors:
@@ -80,6 +81,9 @@ behaviors:
       play_against_latest_model_ratio: 0.5
       window: 10
 ```
+![1](https://user-images.githubusercontent.com/95544542/205360721-aee6145a-d4a8-4deb-97b4-8502e918fe07.PNG)
+
+
 3) Активировал виртуальное пространство и запустил обучение.
 
 ![image](https://user-images.githubusercontent.com/100460661/204885863-0ae2ea78-fcf6-4d05-8a17-88203491c584.png)
